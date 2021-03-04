@@ -1,0 +1,171 @@
+@import url("normalize.css");
+
+:root {
+  --primary: rgb(10, 88, 206);
+  --white: #fff;
+  --gray: #e1e1e1;
+  --light-gray: #eee;
+  --dark-gray: #999;
+  --dark: #333;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*::before,
+*,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+}
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.form {
+  background: var(--light-gray);
+  padding: 60px;
+  margin-top: 60px;
+}
+
+h1 {
+  margin: 40px auto 20px;
+  color: var(--primary);
+  text-align: center;
+}
+
+.brand-motto {
+  color: var(--dark);
+  display: block;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+li {
+  padding: 6px 10px;
+  border: 1px solid var(--light-gray);
+  margin: 10px auto;
+}
+li h4 {
+  color: var(--primary);
+  margin: 0;
+  text-transform: capitalize;
+}
+li p {
+  color: var(--dark);
+  margin: 8px 0 0;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "type tofrom details amount"
+    ". button button .";
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+  form {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "type tofrom"
+      "details amount"
+      "button button";
+  }
+}
+
+@media (max-width: 700px) {
+  form {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "type"
+      "tofrom"
+      "details"
+      "amount"
+      "button";
+  }
+}
+label {
+  display: block;
+  font-weight: bold;
+  font-size: 0.8em;
+  color: #333;
+  margin: 16px 0 6px;
+}
+input,
+select {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid var(--gray);
+  border-radius: 4px;
+}
+
+.field:nth-of-type(1) {
+  grid-area: type;
+}
+
+.field:nth-of-type(2) {
+  grid-area: tofrom;
+}
+
+.field:nth-of-type(3) {
+  grid-area: details;
+}
+
+.field:nth-of-type(4) {
+  grid-area: amount;
+}
+
+.field {
+  display: inline-block;
+  margin: 0 10px;
+}
+button {
+  grid-area: button;
+  color: var(--white);
+  border: 0;
+  background: var(--primary);
+  margin: 16px 0;
+  padding: 1rem 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.logs {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+footer {
+  background: var(--light-gray);
+  padding: 24px;
+  /* margin-top: 60px; */
+}
+
+footer a {
+  text-align: center;
+  display: block;
+  color: var(--dark-gray);
+  font-size: 0.7em;
+}
